@@ -32,16 +32,12 @@ public class Main {
         adjgraph.newEdge(C, D, 1);
         adjgraph.newEdge(D, E, 1);
         adjgraph.newEdge(D, G, 1);
+        adjgraph.newEdge(E, C, 1);
+        adjgraph.newEdge(E, D, 3);
+        adjgraph.newEdge(E,F, 3);
+        adjgraph.newEdge(E, G, 4);
+        adjgraph.newEdge(F, G, 1);
 
-
-        //A.addOutEdge(new Edge(A, B, 1));
-        //A.addOutEdge(new Edge(A, C, 5));
-        //A.addOutEdge(new Edge(A, E, 3));
-        //B.addOutEdge(new Edge(B, E, 1));
-        //B.addOutEdge(new Edge(B, F, 7));
-        //C.addOutEdge(new Edge(C, D, 1));
-        //D.addOutEdge(new Edge(D, E, 1));
-        //D.addOutEdge(new Edge(D, G, 1));
-
+        adjgraph.printGraph();
     }
 }

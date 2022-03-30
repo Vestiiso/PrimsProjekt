@@ -36,7 +36,7 @@ public class AdjacencyListGraph {
     }
 }
 
-class Vertex implements Comparable<Vertex> { //Så vi kan sortere
+class Vertex implements Comparable<Vertex> { //Så vi kan sortere //kan sorteres ud fra distance og kan derefter smides i en kø, husk når man ændrer afstanden i en kø bliver de ikke opdateret så de skal poppes ind igen
     private String Name;
     private ArrayList<Edge> outEdges;
     Integer distance = Integer.MAX_VALUE;
