@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         //Denne class er i høj grad opbygget ud fra vejledningen i videoen "AdjacencyGraph" der ligger på kursets moodle side
 
+        ///*
         //lav adjacency Graph
         AdjacencyListGraph adjgraph = new AdjacencyListGraph();
 
@@ -103,5 +104,17 @@ public class Main {
         adjgraph.newEdge(Slagelse, Sorø, 14);
 
         adjgraph.printGraph();
+
+        //tester:
+        Edge RiRo = new Edge(Ringsted, Roskilde, 31);
+
+        MinHeap<AdjacencyListGraph> adjMinHeap = new MinHeap<AdjacencyListGraph>();
+        adjMinHeap.Insert(adjgraph.newEdge(Ringsted, Roskilde, 31));
+
+        //video her: https://www.youtube.com/watch?v=Ui15O4fmIbI
+        //hendes student class kommer fra bubble sort videoen
+        //hendes student class er åbenbart en helt seperat ting der indeholder en string, int og en char
+
+        //*/
     }
 }
