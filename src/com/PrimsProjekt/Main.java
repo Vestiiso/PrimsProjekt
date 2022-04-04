@@ -111,6 +111,10 @@ public class Main {
         //hendes student class er åbenbart en helt seperat ting der indeholder en string, int og en char
         //MinHeap<x> xMinHeap = new MinHeap<x>();
 
+        //tror jeg har svaret:
+        // - når du udfører prims, laver du jo et mstSet, en form for liste, og det er jo den liste du skal putte ind i
+        // - din minheap, så der er slet ikke grund til at putte direkte fra listen ind i heapen
+
 
         //*/
     }
