@@ -2,7 +2,7 @@ package com.PrimsProjekt;
 
 import java.util.ArrayList;
 
-public class AdjacencyListGraph implements Comparable<AdjacencyListGraph> {
+public class AdjacencyListGraph {
 //Denne class er opbygget ud fra vejledningen i videoen "AdjacencyGraph" der ligger på kursets moodle side
     private ArrayList<Vertex> vertices;
 

@@ -105,15 +105,12 @@ public class Main {
 
         adjgraph.printGraph();
 
-        //tester:
-        Edge RiRo = new Edge(Ringsted, Roskilde, 31);
-
-        MinHeap<AdjacencyListGraph> adjMinHeap = new MinHeap<AdjacencyListGraph>();
-        adjMinHeap.Insert(adjgraph.newEdge(Ringsted, Roskilde, 31));
 
         //video her: https://www.youtube.com/watch?v=Ui15O4fmIbI
         //hendes student class kommer fra bubble sort videoen
         //hendes student class er åbenbart en helt seperat ting der indeholder en string, int og en char
+        //MinHeap<x> xMinHeap = new MinHeap<x>();
+
 
         //*/
     }
