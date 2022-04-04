@@ -15,7 +15,7 @@ public class AdjacencyListGraph {
     }
 
     public void newEdge(Vertex from, Vertex to, Integer dist) {
-        if ( !(vertices.contains(from) && vertices.contains(to))) { //fjern parantes omkring den sidste vertices hvis det ikke virker
+        if ( !(vertices.contains(from) && vertices.contains(to))) {
             System.out.println(" Vertex not found");
             return;
         }
@@ -26,17 +26,20 @@ public class AdjacencyListGraph {
         Vertex currentv;
         for (int i = 0 ; i < vertices.size() ; i++) {
             currentv = vertices.get(i); //så vi ikke skal lave vertices.get alt for meget
-            System.out.println(" Edges from Vertex: " + currentv.getName());
+            System.out.println("Edges from Vertex: " + currentv.getName());
             for (int j = 0; j < currentv.getOutEdges().size(); j++) {
                 Edge currente = currentv.getOutEdges().get(j);
-                System.out.println("to: " + currente.getToVertex().getName() + " weight: " + currente.getWeight());
+                System.out.println(" - to: " + currente.getToVertex().getName() + ", weight: " + currente.getWeight());
             }
             System.out.println(" ");
         }
     }
 }
 
-class Vertex implements Comparable<Vertex> { //Så vi kan sortere //kan sorteres ud fra distance og kan derefter smides i en kø, husk når man ændrer afstanden i en kø bliver de ikke opdateret så de skal poppes ind igen
+class Vertex implements Comparable<Vertex> {
+    //Så vi kan sortere //kan sorteres ud fra distance og kan derefter smides i en kø, husk når man ændrer afstanden i
+    // -en kø bliver de ikke opdateret så de skal poppes ind igen
+
     private String Name;
     private ArrayList<Edge> outEdges;
     Integer distance = Integer.MAX_VALUE;
@@ -87,6 +90,8 @@ class Vertex implements Comparable<Vertex> { //Så vi kan sortere //kan sorteres
 
 class Edge {
     private Vertex fromVertex;
+    private Vertex toVertex;
+    private Integer weight;
 
     public Vertex getFromVertex() {
         return fromVertex;
@@ -111,9 +116,6 @@ class Edge {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
-
-    private Vertex toVertex;
-    private Integer weight;
 
     public Edge(Vertex from, Vertex to, Integer cost) {
         fromVertex = from;
