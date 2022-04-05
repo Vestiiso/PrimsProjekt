@@ -1,11 +1,13 @@
 package com.PrimsProjekt;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 //Koden i denne class er lavet ud fra fremgangen beskrevet i videoen:
 // - MinHeap (no recursion) (fra moodle)
 
 public class MinHeap <T extends Comparable<T>>{
+    HashMap<T, Integer> positionTable = new HashMap<>(); //ikke sikkert den skal bruges, r fra denne video: https://www.youtube.com/watch?v=sEIRzWY34uQ&t=65s 30:40
     //root is at index 0
     ArrayList<T> minheap;
     private int size;
@@ -13,6 +15,10 @@ public class MinHeap <T extends Comparable<T>>{
     public MinHeap() {
         this.minheap = new ArrayList<T>();
         this.size = 0;
+    }
+
+    public int getPosition(T item) { //ikke sikkert den skal bruges, r fra denne video: https://www.youtube.com/watch?v=sEIRzWY34uQ&t=65s 30:40
+        return positionTable.get(item);
     }
 
     public boolean isEmpty() {
@@ -40,10 +46,14 @@ public class MinHeap <T extends Comparable<T>>{
         T dummy = minheap.get(pos1);
         minheap.set(pos1, minheap.get(pos2));
         minheap.set(pos2, dummy);
+        positionTable.put(minheap.get(pos1), pos1);//ikke sikkert den skal bruges, r fra denne video: https://www.youtube.com/watch?v=sEIRzWY34uQ&t=65s 30:40
+        positionTable.put(minheap.get(pos2), pos2);//ikke sikkert den skal bruges, r fra denne video: https://www.youtube.com/watch?v=sEIRzWY34uQ&t=65s 30:40
+
     }
 
     public  void Insert (T item) {
         minheap.add(item);
+        positionTable.put(item, size);//ikke sikkert den skal bruges, r fra denne video: https://www.youtube.com/watch?v=sEIRzWY34uQ&t=65s 30:40
         size++;
         decreasekey(size-1); //indsætter tingen nederst i træeet, og rykker den herefter op af træet indtil det passer
     }
@@ -95,6 +105,7 @@ public class MinHeap <T extends Comparable<T>>{
     public T extractMin() {
         T min = minheap.get(0);
         minheap.set(0, minheap.get(size-1)); //flytter træets sidste element til den øverste plads
+        positionTable.put(minheap.get(0), 0);//ikke sikkert den skal bruges, r fra denne video: https://www.youtube.com/watch?v=sEIRzWY34uQ&t=65s 30:40
         size--;
         increasekey(0);
 

@@ -165,17 +165,18 @@ public class Main {
         //Opret mstSet
         ArrayList<ByVertex> mstSet = new ArrayList<>();
 
+        System.out.println(adjgraph());
+
         //nedenstående kode lavet ud fra fremgangsmåden i denne video fra moodle: https://www.youtube.com/watch?v=sEIRzWY34uQ&t=65s
 
-
+        /*
         while (byerMinHeap.isEmpty()) {
             ByVertex u = byerMinHeap.extractMin();
             for (int v = 0; v < adjgraph.size(); v++) {//her går det muligvis galt ved 22:22 i videoen, har prøvet men ved ikke om det passer
                 //if(u.getKey() == 1 && u.getKey()<) { //23:51 heller ikke sikker på u.getkey ... denne linje ermuligvis ikke nødvendig da vi ikke laver matrix
-                
-                }
+                //der tilføjes mere her i videoen...
             }
         }
-
+        */
     }
 }
