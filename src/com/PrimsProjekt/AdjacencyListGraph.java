@@ -22,6 +22,15 @@ public class AdjacencyListGraph {
         Edge newedge = new Edge(from, to, dist);
     }
 
+    public void addUnDirectedEdge(Vertex from, Vertex to, Integer weight) { //laver en undirected edge (taget fra AdjacencyGraph.java på moodle)
+        if (!(vertices.contains(from) && vertices.contains(to))) {
+            System.out.println("Vertices missing from graph");
+            return;
+        }
+        Edge newE = new Edge(from, to, weight);
+        Edge newE2 = new Edge(to, from, weight);
+    }
+
     public void printGraph(){
         Vertex currentv;
         for (int i = 0 ; i < vertices.size() ; i++) {
@@ -33,6 +42,10 @@ public class AdjacencyListGraph {
             }
             System.out.println(" ");
         }
+    }
+
+    public int size() {
+        return vertices.size();
     }
 }
 

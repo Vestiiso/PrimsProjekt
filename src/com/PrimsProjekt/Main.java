@@ -1,5 +1,7 @@
 package com.PrimsProjekt;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -9,7 +11,9 @@ public class Main {
         //lav adjacency Graph
         AdjacencyListGraph adjgraph = new AdjacencyListGraph();
 
+
         //Lav vertices
+        Vertex ekstraV = new Vertex("ekstraV");
         Vertex Jægerspris = new Vertex("Jægerspris");
         Vertex Kalundborg = new Vertex("Kalundborg");
         Vertex Holbæk = new Vertex("Holbæk");
@@ -29,6 +33,7 @@ public class Main {
 
 
         //tilføj vertices til graf
+        adjgraph.addVertex(ekstraV);
         adjgraph.addVertex(Jægerspris);
         adjgraph.addVertex(Kalundborg);
         adjgraph.addVertex(Holbæk);
@@ -46,76 +51,131 @@ public class Main {
         adjgraph.addVertex(Nakskov);
         adjgraph.addVertex(NykøbingF);
 
+
         //Lav edges
-        adjgraph.newEdge(Eskildstrup, Maribo, 28);
-        adjgraph.newEdge(Eskildstrup, NykøbingF, 13);
-        adjgraph.newEdge(Eskildstrup, Vordingborg, 24);
+        adjgraph.addUnDirectedEdge(Eskildstrup, Maribo, 28);
+        adjgraph.addUnDirectedEdge(Eskildstrup, NykøbingF, 13);
+        adjgraph.addUnDirectedEdge(Eskildstrup, Vordingborg, 24);
 
-        adjgraph.newEdge(Haslev, Korsør, 60);
-        adjgraph.newEdge(Haslev, Køge, 24);
-        adjgraph.newEdge(Haslev, Næstved, 25);
-        adjgraph.newEdge(Haslev, Ringsted, 19);
-        adjgraph.newEdge(Haslev, Roskilde, 47);
-        adjgraph.newEdge(Haslev, Slagelse, 48);
-        adjgraph.newEdge(Haslev, Sorø, 34);
-        adjgraph.newEdge(Haslev, Vordingborg, 40);
+        adjgraph.addUnDirectedEdge(Haslev, Korsør, 60);
+        adjgraph.addUnDirectedEdge(Haslev, Køge, 24);
+        adjgraph.addUnDirectedEdge(Haslev, Næstved, 25);
+        adjgraph.addUnDirectedEdge(Haslev, Ringsted, 19);
+        adjgraph.addUnDirectedEdge(Haslev, Roskilde, 47);
+        adjgraph.addUnDirectedEdge(Haslev, Slagelse, 48);
+        adjgraph.addUnDirectedEdge(Haslev, Sorø, 34);
+        adjgraph.addUnDirectedEdge(Haslev, Vordingborg, 40);
 
-        adjgraph.newEdge(Holbæk, Jægerspris, 34);
-        adjgraph.newEdge(Holbæk, Kalundborg, 44);
-        adjgraph.newEdge(Holbæk, Korsør, 66);
-        adjgraph.newEdge(Holbæk, Ringsted, 36);
-        adjgraph.newEdge(Holbæk, Roskilde, 32);
-        adjgraph.newEdge(Holbæk, Slagelse, 46);
-        adjgraph.newEdge(Holbæk, Sorø, 34);
+        adjgraph.addUnDirectedEdge(Holbæk, Jægerspris, 34);
+        adjgraph.addUnDirectedEdge(Holbæk, Kalundborg, 44);
+        adjgraph.addUnDirectedEdge(Holbæk, Korsør, 66);
+        adjgraph.addUnDirectedEdge(Holbæk, Ringsted, 36);
+        adjgraph.addUnDirectedEdge(Holbæk, Roskilde, 32);
+        adjgraph.addUnDirectedEdge(Holbæk, Slagelse, 46);
+        adjgraph.addUnDirectedEdge(Holbæk, Sorø, 34);
 
-        adjgraph.newEdge(Jægerspris, Korsør, 95);
-        adjgraph.newEdge(Jægerspris, Køge, 58);
-        adjgraph.newEdge(Jægerspris, Ringsted, 56);
-        adjgraph.newEdge(Jægerspris, Roskilde, 33);
-        adjgraph.newEdge(Jægerspris, Slagelse, 74);
-        adjgraph.newEdge(Jægerspris, Sorø, 63);
+        adjgraph.addUnDirectedEdge(Jægerspris, Korsør, 95);
+        adjgraph.addUnDirectedEdge(Jægerspris, Køge, 58);
+        adjgraph.addUnDirectedEdge(Jægerspris, Ringsted, 56);
+        adjgraph.addUnDirectedEdge(Jægerspris, Roskilde, 33);
+        adjgraph.addUnDirectedEdge(Jægerspris, Slagelse, 74);
+        adjgraph.addUnDirectedEdge(Jægerspris, Sorø, 63);
 
-        adjgraph.newEdge(Kalundborg, Ringsted, 62);
-        adjgraph.newEdge(Kalundborg, Roskilde, 70);
-        adjgraph.newEdge(Kalundborg, Slagelse, 39);
-        adjgraph.newEdge(Kalundborg, Sorø, 51);
+        adjgraph.addUnDirectedEdge(Kalundborg, Ringsted, 62);
+        adjgraph.addUnDirectedEdge(Kalundborg, Roskilde, 70);
+        adjgraph.addUnDirectedEdge(Kalundborg, Slagelse, 39);
+        adjgraph.addUnDirectedEdge(Kalundborg, Sorø, 51);
 
-        adjgraph.newEdge(Korsør, Næstved, 45);
-        adjgraph.newEdge(Korsør, Ringsted, 28);
+        adjgraph.addUnDirectedEdge(Korsør, Næstved, 45);
+        adjgraph.addUnDirectedEdge(Korsør, Ringsted, 28);
 
-        adjgraph.newEdge(Køge, Næstved, 45);
-        adjgraph.newEdge(Køge, Ringsted, 28);
-        adjgraph.newEdge(Køge, Roskilde, 25);
-        adjgraph.newEdge(Køge, Vordingborg, 60);
+        adjgraph.addUnDirectedEdge(Køge, Næstved, 45);
+        adjgraph.addUnDirectedEdge(Køge, Ringsted, 28);
+        adjgraph.addUnDirectedEdge(Køge, Roskilde, 25);
+        adjgraph.addUnDirectedEdge(Køge, Vordingborg, 60);
 
-        adjgraph.newEdge(Maribo, Nakskov, 27);
-        adjgraph.newEdge(Maribo, NykøbingF, 26);
+        adjgraph.addUnDirectedEdge(Maribo, Nakskov, 27);
+        adjgraph.addUnDirectedEdge(Maribo, NykøbingF, 26);
 
-        adjgraph.newEdge(Næstved, Roskilde, 57);
-        adjgraph.newEdge(Næstved, Ringsted, 26);
-        adjgraph.newEdge(Næstved, Slagelse, 37);
-        adjgraph.newEdge(Næstved, Sorø, 32);
-        adjgraph.newEdge(Næstved, Vordingborg, 28);
+        adjgraph.addUnDirectedEdge(Næstved, Roskilde, 57);
+        adjgraph.addUnDirectedEdge(Næstved, Ringsted, 26);
+        adjgraph.addUnDirectedEdge(Næstved, Slagelse, 37);
+        adjgraph.addUnDirectedEdge(Næstved, Sorø, 32);
+        adjgraph.addUnDirectedEdge(Næstved, Vordingborg, 28);
 
-        adjgraph.newEdge(Ringsted, Roskilde, 31);
-        adjgraph.newEdge(Ringsted, Sorø, 15);
-        adjgraph.newEdge(Ringsted, Vordingborg, 58);
+        adjgraph.addUnDirectedEdge(Ringsted, Roskilde, 31);
+        adjgraph.addUnDirectedEdge(Ringsted, Sorø, 15);
+        adjgraph.addUnDirectedEdge(Ringsted, Vordingborg, 58);
 
-        adjgraph.newEdge(Slagelse, Sorø, 14);
+        adjgraph.addUnDirectedEdge(Slagelse, Sorø, 14);
+
 
         adjgraph.printGraph();
 
+        //Følgende kode er lavet ud fra fremgangsmåden i denne video fra moodle: https://www.youtube.com/watch?v=Ui15O4fmIbI
+        //opret minHeap
+        MinHeap<ByVertex> byerMinHeap = new MinHeap<>();
 
-        //video her: https://www.youtube.com/watch?v=Ui15O4fmIbI
-        //hendes student class kommer fra bubble sort videoen
-        //hendes student class er åbenbart en helt seperat ting der indeholder en string, int og en char
-        //MinHeap<x> xMinHeap = new MinHeap<x>();
+        ByVertex A = new ByVertex(ekstraV, 0, null);
+        ByVertex B = new ByVertex(Jægerspris, Integer.MAX_VALUE, null);
+        ByVertex C = new ByVertex(Kalundborg, Integer.MAX_VALUE, null);
+        ByVertex D = new ByVertex(Holbæk, Integer.MAX_VALUE, null);
+        ByVertex E = new ByVertex(Sorø, Integer.MAX_VALUE, null);
+        ByVertex F = new ByVertex(Ringsted, Integer.MAX_VALUE, null);
+        ByVertex G = new ByVertex(Roskilde, Integer.MAX_VALUE, null);
+        ByVertex H = new ByVertex(Slagelse, Integer.MAX_VALUE, null);
+        ByVertex I = new ByVertex(Korsør, Integer.MAX_VALUE, null);
+        ByVertex J = new ByVertex(Køge, Integer.MAX_VALUE, null);
+        ByVertex K = new ByVertex(Haslev, Integer.MAX_VALUE, null);
+        ByVertex L = new ByVertex(Næstved, Integer.MAX_VALUE, null);
+        ByVertex M = new ByVertex(Vordingborg, Integer.MAX_VALUE, null);
+        ByVertex N = new ByVertex(Eskildstrup, Integer.MAX_VALUE, null);
+        ByVertex O = new ByVertex(NykøbingF, Integer.MAX_VALUE, null);
+        ByVertex P = new ByVertex(Maribo, Integer.MAX_VALUE, null);
+        ByVertex Q = new ByVertex(Nakskov, Integer.MAX_VALUE, null);
 
-        //tror jeg har svaret:
-        // - når du udfører prims, laver du jo et mstSet, en form for liste, og det er jo den liste du skal putte ind i
-        // - din minheap, så der er slet ikke grund til at putte direkte fra listen ind i heapen
+        byerMinHeap.Insert(A);
+        byerMinHeap.Insert(B);
+        byerMinHeap.Insert(C);
+        byerMinHeap.Insert(D);
+        byerMinHeap.Insert(E);
+        byerMinHeap.Insert(F);
+        byerMinHeap.Insert(G);
+        byerMinHeap.Insert(H);
+        byerMinHeap.Insert(I);
+        byerMinHeap.Insert(J);
+        byerMinHeap.Insert(K);
+        byerMinHeap.Insert(L);
+        byerMinHeap.Insert(M);
+        byerMinHeap.Insert(N);
+        byerMinHeap.Insert(O);
+        byerMinHeap.Insert(P);
+        byerMinHeap.Insert(Q);
+
+        System.out.println("___________________________________________ \n");
+        System.out.println("Byer i vores minHeap: \n");
+
+        //print minHeap
+        while (!byerMinHeap.isEmpty()) {
+            System.out.println(byerMinHeap.extractMin().getNavn());
+        }
+
+        System.out.println("\n");
+
+        //Opret mstSet
+        ArrayList<ByVertex> mstSet = new ArrayList<>();
+
+        //nedenstående kode lavet ud fra fremgangsmåden i denne video fra moodle: https://www.youtube.com/watch?v=sEIRzWY34uQ&t=65s
 
 
-        //*/
+        while (byerMinHeap.isEmpty()) {
+            ByVertex u = byerMinHeap.extractMin();
+            for (int v = 0; v < adjgraph.size(); v++) {//her går det muligvis galt ved 22:22 i videoen, har prøvet men ved ikke om det passer
+                //if(u.getKey() == 1 && u.getKey()<) { //23:51 heller ikke sikker på u.getkey ... denne linje ermuligvis ikke nødvendig da vi ikke laver matrix
+                
+                }
+            }
+        }
+
     }
 }
